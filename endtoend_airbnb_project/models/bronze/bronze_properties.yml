@@ -1,0 +1,77 @@
+models:
+
+  - name: bronze_bookings
+    description: "Raw booking data ingested from staging layer"
+    config:
+      materialized: table
+
+    columns:
+
+      - name: BOOKING_ID
+        description: "Primary identifier for each booking"
+        tests:
+          - not_null
+          - unique
+
+      - name: LISTING_ID
+        description: "Foreign key referencing listing"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('bronze_listings')
+              field: LISTING_ID
+
+      - name: BOOKING_DATE
+        description: "Date when booking was made"
+
+      - name: BOOKING_STATUS
+        description: "Status of the booking"
+        tests:
+          - accepted_values:
+              values: ['confirmed','cancelled','pending']
+
+  - name: bronze_hosts
+    description: "Raw host information"
+
+    config:
+      materialized: table
+
+    columns:
+
+      - name: HOST_ID
+        description: "Primary key for host"
+        tests:
+          - not_null
+          - unique
+
+      - name: RESPONSE_RATE
+        description: "Host response rate percentage"
+        tests:
+          - not_null
+
+  - name: bronze_listings
+    description: "Raw listing data"
+
+    config:
+      materialized: table
+
+    columns:
+
+      - name: LISTING_ID
+        description: "Primary key for listing"
+        tests:
+          - not_null
+          - unique
+
+      - name: HOST_ID
+        description: "Foreign key referencing host"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('bronze_hosts')
+              field: HOST_ID
+
+      - name: PRICE_PER_NIGHT
+        description: "Price charged per night"
+        tests:
+          - not_null

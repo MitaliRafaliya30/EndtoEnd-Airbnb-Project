@@ -1,0 +1,5 @@
+
+target/
+dbt_packages/
+logs/
+endtoend_airbnb_project/profiles.yml
