@@ -126,5 +126,5 @@ Snowflake is used as the central data warehouse.
 - GOLD schema for analytics-ready data
 
 <p align="center">
-  <img src="Airbnb%20pipeline%20architecture.png" alt="Airbnb Pipeline Architecture" width="800">
+  <img src="Airbnb%20pipeline%20architecture.png" alt="Snowflake warehouse" width="800">
 </p>
