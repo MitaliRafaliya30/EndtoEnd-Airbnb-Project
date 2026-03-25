@@ -9,7 +9,7 @@
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
 This project demonstrates a complete end-to-end data engineering pipeline built with a modern data stack.
 
@@ -30,3 +30,101 @@ The pipeline is designed to be scalable, modular, and production-ready, incorpor
 ✔ Docker-based Production Setup  
 ✔ Interactive Power BI Dashboard  
 ✔ Data Quality Validation & Testing  
+
+---
+
+## Architecture Diagram 
+
+<p align="center">
+  <img src="Airbnb%20pipeline%20architecture.png" alt="Airbnb Pipeline Architecture" width="800">
+</p>
+
+---
+
+## Why This Project Matters
+This project simulates a real-world data engineering pipeline used in modern data-driven organizations.
+
+It demonstrates:
+- Scalable data architecture design
+- Data transformation best practices
+- Automated workflow orchestration
+- Business-focused analytics delivery
+
+This aligns with industry standards followed in companies using modern data stack tools.
+
+--- 
+
+## Tech Stack
+- **Python** : EDA 
+- **Cloud Storage**: AWS S3  
+- **Data Warehouse**: Snowflake  
+- **Transformation Tool**: dbt  
+- **Orchestration**: Apache Airflow (Docker + Celery)  
+- **Visualization**: Power BI  
+- **Languages**: SQL, Python  
+- **Containerization**: Docker
+
+---
+
+## Dataset
+The dataset consists of three relational tables:
+
+- **Hosts** → Information about hosts  
+- **Listings** → Property details  
+- **Bookings** → Reservation transactions  
+
+### Dataset Size
+
+| Table | Records |
+|------|--------|
+| Hosts | 200 |
+| Listings | 500 |
+| Bookings | 5000 |
+
+--- 
+
+## Pipeline Workflow
+
+1. **EDA**
+   - Understand and Explore data using Python pandas, numpy, matplotlib, seaborn 
+   
+2. **Data Ingestion**
+   - CSV files uploaded to AWS S3
+   - Loaded into Snowflake STAGING schema
+
+3. **Bronze Layer**
+   - Raw data ingestion using dbt
+   - Incremental loading implemented
+
+4. **Silver Layer**
+   - Data cleaning and transformations
+   - Feature engineering
+   - Business logic validation
+
+5. **Gold Layer**
+   - One Big Table (OBT)
+   - Star Schema (Fact + Dimensions)
+   - Surrogate key implementation
+   - SCD Type 2 using snapshots
+     
+6. **Orchestration**
+   - Airflow DAG runs:
+     - dbt run
+     - dbt snapshot
+     - dbt test
+
+7. **Visualization**
+   - Power BI dashboard for insights
+
+--- 
+
+## Snowflake Data Warehouse
+Snowflake is used as the central data warehouse.
+
+- BROWNZE schema for raw data
+- SILVER schema for cleaned data
+- GOLD schema for analytics-ready data
+
+<p align="center">
+  <img src="Airbnb%20pipeline%20architecture.png" alt="Airbnb Pipeline Architecture" width="800">
+</p>
