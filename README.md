@@ -36,7 +36,7 @@ The pipeline is designed to be scalable, modular, and production-ready, incorpor
 ## Architecture Diagram 
 
 <p align="center">
-  <img src="Airbnb%20pipeline%20architecture.png" alt="Airbnb Pipeline Architecture" width="800">
+  <img src="images/Airbnb%20pipeline%20architecture.png" alt="Airbnb Pipeline Architecture" width="90%">
 </p>
 
 ---
@@ -126,14 +126,14 @@ Snowflake is used as the central data warehouse.
 - GOLD schema for analytics-ready data
 
 <p align="center">
-  <img src="Snowflake%20warehouse.png" width="1000" alt="Snowflake Warehouse">
+  <img src="images/Snowflake%20warehouse.png" alt="Snowflake Warehouse" width="90%">
 </p>
 
 ## DBT Lineage
 dbt lineage graph shows the flow from source → bronze → silver → gold.
 
 <p align="center">
-  <img src="DBT%20Linage%20graph.png" alt="dbt Lineage Graph" width="1000">
+  <img src="images/DBT%20Linage%20graph.png" alt="DBT Lineage Graph" width="90%">
 </p>
 
 ---
@@ -146,15 +146,17 @@ A Star Schema was implemented:
 
 This improves query performance and supports BI analytics.
 
-![Data Model](./image/Data%20Modelling.png)
+<p align="center">
+  <img src="images/Data%20Modeling.png" alt="Data Modeling" width="90%">
+</p>
 
 ---
 
-# 📈 Power BI Dashboard
+## Revenue Intelligence Dashboard
 
-## 💰 Revenue Intelligence Dashboard
-
-![Revenue Dashboard](./image/Revenue%20Dashboard.png)
+<p align="center">
+  <img src="images/Revenue%20Intelligence%20dashboard.png" alt="Revenue Intelligence Dashboard" width="80%">
+</p>
 
 ### 🔍 Insights:
 
@@ -163,20 +165,6 @@ This improves query performance and supports BI analytics.
 * Top cities contributing to revenue
   
 * Property-type revenue distribution
-
----
-
-## 👤 Host Performance Dashboard
-
-![Host Dashboard](./image/Host%20Dashboard.png)
-
-### 🔍 Insights:
-
-* Top-performing hosts ranking
-  
-* Host experience vs revenue correlation
-  
-* Booking distribution per host
 
 ---
 
@@ -225,11 +213,9 @@ This improves query performance and supports BI analytics.
 
 # 🔄 Airflow DAG
 
-![Airflow DAG](./image/Airflow%20DAG.png)
-
-✔ Fully automated pipeline
-
-✔ Handles task dependencies
+<p align="center">
+  <img src="images/Airflow%20DAG.png" alt="Airflow DAG" width="90%">
+</p>
 
 ---
 
