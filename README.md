@@ -126,5 +126,170 @@ Snowflake is used as the central data warehouse.
 - GOLD schema for analytics-ready data
 
 <p align="center">
-  <img src="Airbnb%20pipeline%20architecture.png" alt="Snowflake warehouse" width="800">
+  <img src="Snowflake%20warehouse.png" width="1000" alt="Snowflake Warehouse">
 </p>
+
+## DBT Lineage
+dbt lineage graph shows the flow from source → bronze → silver → gold.
+
+<p align="center">
+  <img src="DBT%20Linage%20graph.png" alt="dbt Lineage Graph" width="1000">
+</p>
+
+---
+
+## Data Modeling (Star Schema)
+A Star Schema was implemented:
+
+- **Fact Table** → Booking-level data  
+- **Dimension Tables** → Hosts, Listings, Bookings  
+
+This improves query performance and supports BI analytics.
+
+![Data Model](./image/Data%20Modelling.png)
+
+---
+
+# 📈 Power BI Dashboard
+
+## 💰 Revenue Intelligence Dashboard
+
+![Revenue Dashboard](./image/Revenue%20Dashboard.png)
+
+### 🔍 Insights:
+
+* Revenue trends over time
+  
+* Top cities contributing to revenue
+  
+* Property-type revenue distribution
+
+---
+
+## 👤 Host Performance Dashboard
+
+![Host Dashboard](./image/Host%20Dashboard.png)
+
+### 🔍 Insights:
+
+* Top-performing hosts ranking
+  
+* Host experience vs revenue correlation
+  
+* Booking distribution per host
+
+---
+
+# 💼 Business Questions Answered
+
+### 💰 Revenue Insights
+
+* What is the total revenue over time?
+  
+* Which periods generate peak revenue?
+  
+* Which cities contribute the most revenue?
+
+### 🏠 Property Insights
+
+* Which property types generate the most revenue?
+* How does property size affect earnings?
+
+### 👤 Host Insights
+
+* Who are the top-performing hosts?
+* What is the contribution of top hosts to total revenue?
+* How does experience impact performance?
+
+### 📊 Booking Insights
+
+* What are booking trends over time?
+* What is the average revenue per booking and per night?
+
+### 🌍 Geographic Insights
+
+* Which locations drive business growth?
+* Where should expansion be focused?
+
+---
+
+# 📊 Key Metrics Snapshot
+
+* 💰 Total Revenue: ₹6.9M
+* 📅 Total Bookings: 5K
+* 🌙 Total Nights: 37.43K
+* 📈 Avg Revenue per Booking: ₹1.38K
+* 🏆 Top Host Contribution: 2%
+
+---
+
+# 🔄 Airflow DAG
+
+![Airflow DAG](./image/Airflow%20DAG.png)
+
+✔ Fully automated pipeline
+
+✔ Handles task dependencies
+
+---
+
+## Docker Setup
+
+```
+airflow-apiserver
+airflow-scheduler
+airflow-worker
+postgres
+redis
+```
+
+---
+
+## Run Project
+
+```
+1. Clone repository
+2. Setup `.env` file
+3. Run Docker:
+
+   docker-compose up -d
+
+4. Access Airflow UI:
+   http://localhost:8090
+
+5. Trigger DAG
+```
+
+---
+
+# 📌 DBT Commands
+
+```
+dbt run  
+dbt test  
+dbt snapshot  
+dbt docs generate  
+dbt docs serve 
+```
+
+---
+
+# 📌 Future Improvements
+
+- Add real-time streaming (Kafka)
+- Implement CI/CD for dbt pipelines
+- Add data quality monitoring tools
+- Optimize Airflow scheduling & retries
+- Deploy dashboard to cloud (Power BI Service)
+
+---
+
+# 👨‍💻 Author
+
+**Mitali Rafaliya**
+Aspiring Data Engineer
+
+Connect with me on LinkedIn 
+https://www.linkedin.com/in/mitali-rafaliya-60876a252/
+---
+
