@@ -262,7 +262,7 @@ redis
 
 ---
 
-# 📌 DBT Commands
+## DBT Commands
 
 ```
 dbt run  
@@ -274,7 +274,7 @@ dbt docs serve
 
 ---
 
-# 📌 Future Improvements
+## Future Improvements
 
 - Add real-time streaming (Kafka)
 - Implement CI/CD for dbt pipelines
@@ -284,10 +284,10 @@ dbt docs serve
 
 ---
 
-# 👨‍💻 Author
+## Author
 
-**Mitali Rafaliya**
-Aspiring Data Engineer
+- **Mitali Rafaliya**
+- Aspiring Data Engineer
 
 Connect with me on LinkedIn 
 https://www.linkedin.com/in/mitali-rafaliya-60876a252/
