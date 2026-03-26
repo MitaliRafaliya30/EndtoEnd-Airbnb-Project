@@ -86,8 +86,6 @@ The dataset consists of three relational tables:
 
 ## Pipeline Workflow
 
-## Pipeline Workflow
-
 1. **EDA**
    - Performed exploratory analysis using Python (Pandas, Matplotlib, Seaborn)
 
