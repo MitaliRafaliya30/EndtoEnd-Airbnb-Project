@@ -95,7 +95,7 @@ The dataset consists of three relational tables:
 
 3. **Data Transformation (dbt)**
    - Bronze: Raw ingestion  
-   - Silver: Cleaning & transformations  with incremental loading 
+   - Silver: Data Cleaning & transformations  with incremental loading 
    - Gold: Business-ready models (Fact + Dimensions)
 
 4. **Data Modeling**
@@ -115,7 +115,7 @@ The dataset consists of three relational tables:
 ## Snowflake Data Warehouse
 Snowflake is used as the central data warehouse.
 
-- BROWNZE schema for raw data
+- BRONZE schema for raw data
 - SILVER schema for cleaned data
 - GOLD schema for analytics-ready data
 
@@ -155,6 +155,15 @@ This improves query performance and supports BI analytics.
 This interactive Power BI dashboard provides insights into Airbnb revenue, bookings, and listing performance.
 It helps identify trends, high-performing segments, and supports data-driven decision-making.
 
+## Key Insights
+
+- Premium listings generate higher revenue compared to budget segments  
+- Private rooms contribute significantly to total bookings  
+- Certain cities dominate overall revenue distribution  
+- Cancellation rate indicates potential improvement in booking reliability  
+
+These insights help stakeholders optimize pricing, improve listing performance, and make data-driven decisions.
+
 ---
 
 # 🔄 Airflow DAG
@@ -170,6 +179,8 @@ This ensures automated, reliable, and production-ready data workflows.
 
 ## Docker Setup
 
+The project is containerized using Docker to ensure consistency and scalability.
+
 ```
 airflow-apiserver
 airflow-scheduler
@@ -184,15 +195,15 @@ redis
 
 ```
 1. Clone repository
-2. Setup `.env` file
-3. Run Docker:
+2. Configure the `.env` file
+3.Start services using Docker:
 
    docker-compose up -d
 
 4. Access Airflow UI:
    http://localhost:8090
 
-5. Trigger DAG
+5. Trigger the DAG
 ```
 
 ---
