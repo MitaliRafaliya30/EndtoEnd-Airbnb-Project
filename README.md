@@ -11,11 +11,11 @@
 
 ## Project Overview
 
-This project demonstrates a complete end-to-end data engineering pipeline built with a modern data stack.
+This project demonstrates an end-to-end data engineering pipeline built using a modern data stack.
 
-Following initial Exploratory Data Analysis (EDA), raw Airbnb datasets are ingested from AWS S3 into Snowflake. The data is then transformed via dbt using a Medallion Architecture (Bronze → Silver → Gold), orchestrated by Apache Airflow, and visualized through an interactive Power BI dashboard. The pipeline is engineered for scalability and modularity, featuring automated data quality checks, incremental processing, and dimensional modeling.
+Airbnb data is ingested from AWS S3 into Snowflake, transformed using dbt with a Medallion Architecture (Bronze → Silver → Gold), orchestrated via Apache Airflow, and visualized in Power BI.
 
-The pipeline is designed to be scalable, modular, and production-ready, incorporating data quality checks, incremental processing, and dimensional modeling.
+The pipeline is fully automated, scalable, and designed with data quality checks, incremental processing, and dimensional modeling.
 
 ---
 
@@ -42,15 +42,16 @@ The pipeline is designed to be scalable, modular, and production-ready, incorpor
 ---
 
 ## Why This Project Matters
-This project simulates a real-world data engineering pipeline used in modern data-driven organizations.
 
-It demonstrates:
-- Scalable data architecture design
-- Data transformation best practices
-- Automated workflow orchestration
-- Business-focused analytics delivery
+This project reflects real-world data engineering practices used in modern organizations.
 
-This aligns with industry standards followed in companies using modern data stack tools.
+It demonstrates my ability to:
+- Design scalable data pipelines  
+- Build transformation workflows using dbt  
+- Orchestrate pipelines using Airflow  
+- Deliver business insights through dashboards  
+
+It showcases end-to-end ownership from raw data to analytics.
 
 --- 
 
@@ -85,37 +86,32 @@ The dataset consists of three relational tables:
 
 ## Pipeline Workflow
 
+## Pipeline Workflow
+
 1. **EDA**
-   - Understand and Explore data using Python pandas, numpy, matplotlib, seaborn 
-   
+   - Performed exploratory analysis using Python (Pandas, Matplotlib, Seaborn)
+
 2. **Data Ingestion**
-   - CSV files uploaded to AWS S3
-   - Loaded into Snowflake STAGING schema
+   - Raw CSV data uploaded to AWS S3
+   - Loaded into Snowflake staging layer
 
-3. **Bronze Layer**
-   - Raw data ingestion using dbt
-   - Incremental loading implemented
+3. **Data Transformation (dbt)**
+   - Bronze: Raw ingestion  
+   - Silver: Cleaning & transformations  with incremental loading 
+   - Gold: Business-ready models (Fact + Dimensions)
 
-4. **Silver Layer**
-   - Data cleaning and transformations
-   - Feature engineering
-   - Business logic validation
+4. **Data Modeling**
+   - Star schema with fact and dimension tables  
+   - Surrogate keys and SCD Type 2 implementation  
 
-5. **Gold Layer**
-   - One Big Table (OBT)
-   - Star Schema (Fact + Dimensions)
-   - Surrogate key implementation
-   - SCD Type 2 using snapshots
-     
-6. **Orchestration**
-   - Airflow DAG runs:
-     - dbt run
-     - dbt snapshot
-     - dbt test
+5. **Orchestration (Airflow)**
+   - Automated pipeline execution:
+     - `dbt run`
+     - `dbt snapshot`
+     - `dbt test`
 
-7. **Visualization**
-   - Power BI dashboard for insights
-
+6. **Visualization**
+   - Insights delivered through Power BI dashboard
 --- 
 
 ## Snowflake Data Warehouse
@@ -158,56 +154,8 @@ This improves query performance and supports BI analytics.
   <img src="images/Revenue%20Intelligence%20dashboard.png" alt="Revenue Intelligence Dashboard" width="80%">
 </p>
 
-### 🔍 Insights:
-
-* Revenue trends over time
-  
-* Top cities contributing to revenue
-  
-* Property-type revenue distribution
-
----
-
-# 💼 Business Questions Answered
-
-### 💰 Revenue Insights
-
-* What is the total revenue over time?
-  
-* Which periods generate peak revenue?
-  
-* Which cities contribute the most revenue?
-
-### 🏠 Property Insights
-
-* Which property types generate the most revenue?
-* How does property size affect earnings?
-
-### 👤 Host Insights
-
-* Who are the top-performing hosts?
-* What is the contribution of top hosts to total revenue?
-* How does experience impact performance?
-
-### 📊 Booking Insights
-
-* What are booking trends over time?
-* What is the average revenue per booking and per night?
-
-### 🌍 Geographic Insights
-
-* Which locations drive business growth?
-* Where should expansion be focused?
-
----
-
-# 📊 Key Metrics Snapshot
-
-* 💰 Total Revenue: ₹6.9M
-* 📅 Total Bookings: 5K
-* 🌙 Total Nights: 37.43K
-* 📈 Avg Revenue per Booking: ₹1.38K
-* 🏆 Top Host Contribution: 2%
+This interactive Power BI dashboard provides insights into Airbnb revenue, bookings, and listing performance.
+It helps identify trends, high-performing segments, and supports data-driven decision-making.
 
 ---
 
@@ -216,6 +164,9 @@ This improves query performance and supports BI analytics.
 <p align="center">
   <img src="images/Airflow%20DAG.png" alt="Airflow DAG" width="90%">
 </p>
+
+The Airflow DAG orchestrates the end-to-end pipeline by executing dbt transformations, snapshots, and tests in sequence.
+This ensures automated, reliable, and production-ready data workflows.
 
 ---
 
